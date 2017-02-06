@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Giphy Challenge</title>
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/angular-route.min.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/scripts/giphyService.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <base href="/">
+  </head>
+  <body ng-app="GiphyApp">
+    <main>
+      <header>
+        <h1>Gif Land</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="/favorites">Favorites</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div>
+        <ng-view></ng-view>
+      </div>
+    </main>
+  </body>

@@ -1,0 +1,9 @@
+<div ng-controller="FavController as yeezy">
+  <h2>Favorites: {{yeezy.count}}</h2>
+
+  <!-- ng-repeat block: -->
+  <div ng-repeat="gif in yeezy.gifList">
+      <img ng-src="{{ gif.gif_url }}" />
+      <p>{{ gif.gif_comment }}</p>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="test" ng-controller="GifController as jeezy">
+  <div id="gifScreen">
+    <img ng-show="jeezy.gifUrl" ng-src="{{jeezy.gifUrl}}" alt="">
+  </div>
+  <h2>Search!</h2>
+  <input ng-model="vm.searchQuery" type="text" />
+  <input type="submit" name="Search" value="CLICK FOR GIFs" ng-click="jeezy.searchGif(vm.searchQuery)">
+  <input type="submit" name="Random" value="Get a Random" ng-click="jeezy.randomGif()">
+  <form id="gifComment">
+      <div>
+        <label>Enter Comment:</label>
+        <input type="text" ng-model="vm.gifComment"/>
+        <p> {{ gifComment }}</p>
+      </div>
+      <button id="saveComment" class="btn btn-default" ng-click="jeezy.favoriteGif(vm.gifComment)">Favorite this gif</button>
+  </form>
+</div>
