@@ -13,6 +13,7 @@ app.config(function ($routeProvider, $locationProvider) {
 
 
 
+  // FOR main.html
 app.controller('GifController', function(GifGetter) {
   console.log('GifController connected');
 
@@ -32,12 +33,12 @@ vm.randomGif();
 
 vm.searchGif = function(searchQuery) {
   GifGetter.searchGif(searchQuery).then(function(res) {
-    // store array of gifs in searchGifUrl
     vm.gifUrl = res.data[0].images.original.url;
   }); // end GifGetter.searchGif
 }; // end vm.searchGif
 
 vm.favoriteGif = function(comment) {
+  // save the comment in gifComment and send the controller as the data.
   vm.gifComment = comment;
   favorite = this;
   GifGetter.favoriteGif(favorite).then(function(res) {
@@ -50,23 +51,23 @@ vm.favoriteGif = function(comment) {
 
 
 
+  // FOR favorites.html
 app.controller('FavController', function(GifGetter) {
 
   var favm = this;
-
+  // make an array to store all favorited gifs
   favm.gifList = [];
 
   favm.getFavoriteGifs = function () {
   GifGetter.getFavoriteGifs().then(function (res) {
-    console.log('inside client.js favGif res: ', res);
 
+    // make the array equal an array of objects (the response)
     favm.gifList = res;
-    console.log('length',favm.gifList.length);
     favm.count = res.length
   }); // close then.
 }; // closes getFavGif
 
-
+  // display all favorited gifs
 favm.getFavoriteGifs();
 
 

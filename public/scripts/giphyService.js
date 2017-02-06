@@ -44,6 +44,7 @@ app.service('GifGetter', function($http) {
 
 
   // FOR favorites.html
+  // Grabs all the favorited objects from the database.
 
   this.getFavoriteGifs = function() {
     return $http.get('/gifRoutes').then(function(response) {
